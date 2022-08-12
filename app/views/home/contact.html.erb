@@ -1,4 +1,32 @@
-<div>
-  <h1 class="font-bold text-4xl">Home#contact</h1>
-  <p>Find me in app/views/home/contact.html.erb</p>
-</div>
+<section class="text-gray-600 body-font relative">
+  <div class="lg:w-1/2 md:w-2/3 mx-auto">
+    <%= form_with url: "/create_contact", scope: :contact do |f|%>
+      <div class="flex flex-col items-center">
+        <div class="p-2 w-1/3">
+            <div class="relative text-center">
+                <%= f.label :full_name, t('.name'), class: "label leading-7 text-sm text-gray-600" %>
+                <%= f.text_field :full_name, required: true, class: "input w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"%>
+                <%= field_has_error(:full_name, @contact)%>
+            </div>
+        </div>
+        <div class="p-2 w-1/3">
+            <div class="relative text-center">
+                <%= f.label :email, "E-mail", class: "label leading-7 text-sm text-gray-600"%>
+                <%= f.email_field :email, required: true, class: "email w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"%>
+                <%= field_has_error(:email, @contact)%>
+            </div>
+        </div>
+        <div class="p-2 w-1/3">
+            <div class="relative text-center">
+                <%= f.label :message, "Message", class: "label leading-7 text-sm text-gray-600"%>
+                <%= f.text_area :message, required: true, class: "textarea w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"%>
+                <%= field_has_error(:message, @contact)%>
+            </div>
+        </div>
+        <div class="p-2">
+            <%= f.submit "Contact Us", class: "self-center px-8 py-3 font-semibold rounded bg-blue-500 dark:bg-blue-400 dark:text-gray-900" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>

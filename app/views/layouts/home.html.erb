@@ -11,12 +11,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-  <%= render 'shared/header' %>
-    <main class="container mx-auto mt-28 px-5 flex">
-    <p><%= notice %></p>
-    <p><%= alert %></p>
-      <%= yield %>
-    </main>
+  <body class="hero">
+
+    <%= render 'shared/header' %>
+        <p><%= notice %></p>
+        <p><%= alert %></p>
+        <%= yield %>
+
   </body>
 </html>

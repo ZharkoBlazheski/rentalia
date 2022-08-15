@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "home/index", type: :view do
+RSpec.describe 'home/index', type: :view do
   it 'renders index page' do
     render
     expect(rendered).to include('Your dream vacation spot')

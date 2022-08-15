@@ -1,9 +1,13 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Contact, type: :model do
-  subject(:contact) { Contact.create!(full_name: "John Doe",
-                                      email: "test@test.com",
-                                      message: "Random message") }
+  subject(:contact) do
+    described_class.create!(full_name: 'John Doe',
+                            email: 'test@test.com',
+                            message: 'Random message')
+  end
 
   describe 'validations' do
     it { expect(contact).to be_valid }

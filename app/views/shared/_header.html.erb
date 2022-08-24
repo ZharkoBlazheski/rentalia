@@ -19,6 +19,11 @@
 			<li class="flex">
 				<a rel="noopener noreferrer" href="/home/contact" class="flex items-center px-4 -mb-1 hover:border-blue-700 border-b-2 dark:border-transparent">Contact</a>
 			</li>
+			<% if user_signed_in? %>
+				<li class="flex">
+					<%= link_to "Dashboard", dashboard_root_path, class: "flex items-center px-4 -mb-1 hover:border-blue-700 border-b-2 dark:border-transparent"%>
+				</li>
+			<% end %>
 		</ul>
 		<div class="items-center flex-shrink-0 hidden lg:flex">
         <% if user_signed_in? %>

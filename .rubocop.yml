@@ -31,6 +31,9 @@ RSpec/EmptyExampleGroup:
 RSpec/ExampleLength:
   Max: 15
 
+RSpec/InstanceVariable:
+  Enabled: false
+
 Rails/I18nLocaleTexts:
   Enabled: false
 

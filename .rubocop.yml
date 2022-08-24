@@ -39,3 +39,6 @@ Rails/I18nLocaleTexts:
 
 Lint/MissingSuper:
   Enabled: false
+
+Metrics/MethodLength:
+  Max: 15

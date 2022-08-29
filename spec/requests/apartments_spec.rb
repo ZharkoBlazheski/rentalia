@@ -18,13 +18,7 @@ RSpec.describe '/apartments', type: :request do
   include Warden::Test::Helpers
 
   subject(:user) do
-    User.create!(first_name: 'Zharko',
-                 last_name: 'Blazheski',
-                 phone: '071 298 228',
-                 address: 'Velgoshti',
-                 email: 'user@test.com',
-                 password: 'password',
-                 password_confirmation: 'password')
+    create(:user)
   end
 
   let(:valid_attributes) do

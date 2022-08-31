@@ -24,9 +24,15 @@
     <%= apartment.rooms %>
   </p>
 
+   <p class="my-5">
+    <strong class="block font-medium mb-1">User:</strong>
+    <%= apartment.user.last_name %>
+  </p>
+
   <% if action_name != "show" %>
     <%= link_to "Show this apartment", dashboard_apartment_path(apartment), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to 'Edit this apartment', edit_dashboard_apartment_path(apartment), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
     <hr class="mt-6">
   <% end %>
+  <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=20.699443817138675%2C41.101991966686086%2C20.891017913818363%2C41.17568224290889&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=13/41.1388/20.7952">View Larger Map</a></small>
 </div>

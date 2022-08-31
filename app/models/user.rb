@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  validates :first_name, :last_name, :phone, :address, presence: true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  :recoverable, :rememberable, :validatable
+  has_many :apartments
+  validates :first_name, :last_name, :phone, :address, presence: true
 end

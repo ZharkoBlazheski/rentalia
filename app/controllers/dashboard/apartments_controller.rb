@@ -6,7 +6,7 @@ module Dashboard
 
     # GET /apartments or /apartments.json
     def index
-      @apartments = Apartment.all
+      @apartments = current_user.apartments
     end
 
     # GET /apartments/1 or /apartments/1.json

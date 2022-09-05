@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :rooms
   resources :apartments
   get 'home/index'
   get 'home/about'
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   namespace :dashboard do
     get 'home', to: 'static#home'
     resources :apartments
+    resources :rooms
     root to: 'static#home'
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

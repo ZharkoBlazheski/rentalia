@@ -4,11 +4,22 @@
   <% end %>
 
   <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Apartments</h1>
+    <h1 class="font-bold text-4xl">You have <%= @apartments.count %> apartments </h1>
     <%= link_to 'New apartment', new_dashboard_apartment_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
   <div id="apartments" class="min-w-full">
-    <%= render @apartments %>
+    <% @apartments.each do |apartment| %>
+    <div class="grid grid-cols-4 gap-4 border-2 border-solid border-black mb-4">
+      <div class="bg-blue-200"><strong class="block font-medium mb-1">Address:</strong></div>
+      <div><strong class="block font-medium mb-1">Phone:</strong></div>
+      <div><strong class="block font-medium mb-1">Rooms:</strong></div>
+      <div><strong class="block font-medium mb-1">Link:</strong></div>
+      <div><%= link_to apartment.address, dashboard_apartment_path(apartment) %></div>
+      <div><%= apartment.phone %></div>
+      <div><%= apartment.rooms %></div>
+      <div><%= link_to "GO", dashboard_apartment_path(apartment) %></div>
+    </div>
+    <% end %>
   </div>
 </div>

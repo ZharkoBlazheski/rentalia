@@ -22,7 +22,7 @@ class ApartmentsController < ApplicationController
   # POST /apartments or /apartments.json
   def create
     @apartment = Apartment.new(apartment_params)
-
+    @apartment.user_id = current_user.id
     respond_to do |format|
       if @apartment.save
         format.html { redirect_to apartment_url(@apartment), notice: 'Apartment was successfully created.' }

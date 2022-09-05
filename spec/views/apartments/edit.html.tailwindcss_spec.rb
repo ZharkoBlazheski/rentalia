@@ -9,7 +9,8 @@ RSpec.describe 'apartments/edit', type: :view do
                                       phone: 'MyString',
                                       latitude: 1.5,
                                       longitude: 1.5,
-                                      rooms: 1
+                                      rooms: 1,
+                                      user_id: create(:user).id
                                     ))
   end
 

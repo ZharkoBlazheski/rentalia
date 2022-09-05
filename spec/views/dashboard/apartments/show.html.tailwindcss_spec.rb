@@ -9,7 +9,8 @@ RSpec.describe 'dashboard/apartments/show', type: :view do
                                       phone: 'Phone',
                                       latitude: 2.5,
                                       longitude: 3.5,
-                                      rooms: 4
+                                      rooms: 4,
+                                      user_id: create(:user).id
                                     ))
   end
 

@@ -6,7 +6,7 @@ module Dashboard
 
     # GET /apartments or /apartments.json
     def index
-      @apartments = Apartment.all
+      @apartments = current_user.apartments
     end
 
     # GET /apartments/1 or /apartments/1.json
@@ -23,7 +23,7 @@ module Dashboard
     # POST /apartments or /apartments.json
     def create
       @apartment = Apartment.new(apartment_params)
-
+      @apartment.user_id = current_user.id
       respond_to do |format|
         if @apartment.save
           format.html do

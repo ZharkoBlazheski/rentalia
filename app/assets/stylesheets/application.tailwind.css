@@ -2,15 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-
-@layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
-  }
+@font-face {
+  font-family: 'Lobster';
+  src: url('MeriendaOne-Regular.ttf') format('truetype');
 }
 
-*/
 .hero {
   height: 100vh;
   position: relative;
@@ -28,4 +24,8 @@
     left: 0px;
     opacity: 0.6;
     z-index: -1;
+}
+
+.merienda-one-font {
+  font-family: 'Lobster';
 }

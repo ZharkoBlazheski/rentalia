@@ -2,9 +2,9 @@
   <h1 class="font-bold text-5xl mt-16 md:mt-64 md-8 md:mb-24 merienda-one-font">Your dream vacation spot</h1>
   <div class="flex flex-col md:flex-row justify-center">
     <!-- Left calendar-->
-    <%= render 'calendar' %>
+    <%= render 'calendar', month: Time.now %>
     <!-- Right calendar-->
-    <%= render 'calendar' %>
+    <%= render 'calendar', month: Time.now.next_month %>
   </div>
   <button class="self-center px-8 py-3 font-semibold rounded bg-blue-500 dark:bg-blue-400 dark:text-gray-900"> Pick Room </button>
 </div>

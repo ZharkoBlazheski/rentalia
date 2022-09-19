@@ -17,7 +17,7 @@ RSpec.describe 'dashboard/apartments/edit', type: :view do
   it 'renders the edit apartment form' do
     render
 
-    assert_select 'form[action=?][method=?]', apartment_path(@apartment), 'post' do
+    assert_select 'form[action=?][method=?]', dashboard_apartment_path(@apartment), 'post' do
       assert_select 'input[name=?]', 'apartment[address]'
 
       assert_select 'input[name=?]', 'apartment[phone]'

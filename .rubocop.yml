@@ -29,7 +29,7 @@ RSpec/EmptyExampleGroup:
   Enabled: false
 
 RSpec/ExampleLength:
-  Max: 15
+  Max: 20
 
 RSpec/InstanceVariable:
   Enabled: false

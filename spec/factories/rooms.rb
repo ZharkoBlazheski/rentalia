@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :room do
     bed_capacity { 1 }
@@ -16,6 +18,6 @@ FactoryBot.define do
     microwave { false }
     security_camera { false }
     room_number { 1 }
-    other { "MyString" }
+    other { 'MyString' }
   end
 end

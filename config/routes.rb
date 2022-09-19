@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :rooms
+  resources :rooms, only: [:index, :show]
   resources :apartments
   get 'home/index'
   get 'home/about'

@@ -4,7 +4,10 @@ include FactoryBot::Syntax::Methods
 puts "Seeding started..."
 
 puts "Creating users..."
-create(:user, first_name: "John", last_name: "Smith", email: "user@test.com")
+default_user = create(:user, first_name: "John", last_name: "Smith", email: "user@test.com")
+5.times do
+    create(:apartment, user_id: default_user.id)
+end
 
 puts "Creating apartments..."
 10.times do

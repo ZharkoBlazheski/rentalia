@@ -29,3 +29,7 @@
 .merienda-one-font {
   font-family: 'Lobster';
 }
+
+.sidebar {
+  min-height: calc(100vh)!important;
+}

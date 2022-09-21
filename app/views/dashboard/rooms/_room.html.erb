@@ -1,4 +1,15 @@
 <div id="<%= dom_id room %>">
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Tv:</strong>
+    <%= humanize_boolean(room.tv) %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Books:</strong>
+    <%= humanize_boolean(room.books) %>
+  </p>
+
   <p class="my-5">
     <strong class="block font-medium mb-1">Bed capacity:</strong>
     <%= room.bed_capacity %>
@@ -12,16 +23,6 @@
   <p class="my-5">
     <strong class="block font-medium mb-1">Parking:</strong>
     <%= humanize_boolean(room.parking) %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Tv:</strong>
-    <%= humanize_boolean(room.tv) %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Books:</strong>
-    <%= humanize_boolean(room.books) %>
   </p>
 
   <p class="my-5">

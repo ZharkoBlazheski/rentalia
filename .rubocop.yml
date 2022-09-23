@@ -22,6 +22,8 @@ Style/Documentation:
 RSpec/MultipleExpectations:
   Max: 7
 
+RSpec/NoExpectationExample:
+  Enabled: false
 Metrics/BlockLength:
   Max: 100
 

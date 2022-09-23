@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Rentalia</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -9,14 +9,14 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-  </head>
+</head>
 
-  <body>
+<body>
 <!--  https://larainfo.com/blogs/tailwind-css-simple-admin-dashboard-ui-example -->
 
     <div class="flex sidebar">
 
-        <%= render 'layouts/sidebar' %>
+        <%= render 'shared/sidebar' %>
 
         <div class="w-full px-4 py-2 bg-gray-200">
             <div class="container mx-auto mt-12">

@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   get 'home/privacy'
   get 'home/dashboard'
   post '/create_contact', to: 'home#create_contact'
-  devise_for :users
+  devise_for :users,
+    controllers: {
+      registrations: "users/registrations"
+    }
 
   namespace :dashboard do
     get 'home', to: 'static#home'

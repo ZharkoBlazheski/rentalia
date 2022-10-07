@@ -8,7 +8,11 @@
     <%= link_to 'New room', new_dashboard_room_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <div id="rooms" class="min-w-full">
-    <%= render @rooms %>
-  </div>
+    <% @rooms.each do |room| %>
+      <div>
+        <%= link_to "Room #{room.room_number}", dashboard_room_path(room) %>
+      </div>
+    <% end %>
+
+
 </div>

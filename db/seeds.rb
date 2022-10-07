@@ -17,4 +17,9 @@ puts "Creating apartments..."
     end
 end
 
+puts "Creating rooms..."
+15.times do
+    create(:room)
+end
+
 puts "Seeding completed!"

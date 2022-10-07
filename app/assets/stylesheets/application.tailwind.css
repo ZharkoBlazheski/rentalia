@@ -33,3 +33,24 @@
 .sidebar {
   min-height: calc(100vh)!important;
 }
+
+.btn {
+  @apply rounded-lg py-3 px-5 text-white block font-medium;
+
+}
+
+.btn-primary {
+  @apply bg-blue-600;
+}
+
+.btn-danger {
+  @apply bg-red-600;
+}
+
+.btn-warning {
+  @apply bg-yellow-400 text-black;
+}
+
+.btn-success {
+  @apply bg-green-600;
+}

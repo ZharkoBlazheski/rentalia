@@ -1,4 +1,23 @@
 <div id="<%= dom_id room %>">
+  <p class="my-5">IMAGES</p>
+  <div class="flex flex-row">
+    <span class="mx-2"><%= image_tag('room1.jpg', class: "w-32 h-32 rounded") %></span>
+    <span class="mx-2"><%= image_tag('room2.jpg', class: "w-32 h-32 rounded") %></span>
+    <span class="mx-2"><%= image_tag('room3.jpg', class: "w-32 h-32 rounded") %></span>
+    <span class="mx-2"><%= image_tag('room4.jpg', class: "w-32 h-32 rounded") %></span>
+  </div>
+
+  <p>Basic Info</p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Room number:</strong>
+    <%= room.room_number %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Bed capacity:</strong>
+    <%= room.bed_capacity %>
+  </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Tv:</strong>
@@ -8,11 +27,6 @@
   <p class="my-5">
     <strong class="block font-medium mb-1">Books:</strong>
     <%= humanize_boolean(room.books) %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Bed capacity:</strong>
-    <%= room.bed_capacity %>
   </p>
 
   <p class="my-5">
@@ -32,52 +46,47 @@
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Yard:</strong>
-    <%= room.yard %>
+    <%= humanize_boolean(room.yard) %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Pet friendly:</strong>
-    <%= room.pet_friendly %>
+    <%= humanize_boolean(room.pet_friendly) %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Hair dryer:</strong>
-    <%= room.hair_dryer %>
+    <%= humanize_boolean(room.hair_dryer) %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Warm water:</strong>
-    <%= room.warm_water %>
+    <%= humanize_boolean(room.warm_water) %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Smoke alarm:</strong>
-    <%= room.smoke_alarm %>
+    <%= humanize_boolean(room.smoke_alarm) %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Smoking allowed:</strong>
-    <%= room.smoking_allowed %>
+    <%= humanize_boolean(room.smoking_allowed) %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Refrigirator:</strong>
-    <%= room.refrigirator %>
+    <%= humanize_boolean(room.refrigirator) %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Microwave:</strong>
-    <%= room.microwave %>
+    <%= humanize_boolean(room.microwave) %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Security camera:</strong>
-    <%= room.security_camera %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Room number:</strong>
-    <%= room.room_number %>
+    <%= humanize_boolean(room.security_camera) %>
   </p>
 
   <p class="my-5">

@@ -2,22 +2,22 @@
 
 FactoryBot.define do
   factory :room do
-    bed_capacity { 1 }
-    breakfast { false }
-    parking { false }
-    tv { false }
-    books { false }
-    balcony { false }
-    yard { false }
-    pet_friendly { false }
-    hair_dryer { false }
-    warm_water { false }
-    smoke_alarm { false }
-    smoking_allowed { false }
-    refrigirator { false }
-    microwave { false }
-    security_camera { false }
-    room_number { 1 }
+    bed_capacity { rand(1..4) }
+    breakfast { [true, false].sample }
+    parking { [true, false].sample }
+    tv { [true, false].sample }
+    books { [true, false].sample }
+    balcony { [true, false].sample }
+    yard { [true, false].sample }
+    pet_friendly { [true, false].sample }
+    hair_dryer { [true, false].sample }
+    warm_water { [true, false].sample }
+    smoke_alarm { [true, false].sample }
+    smoking_allowed { [true, false].sample }
+    refrigirator { [true, false].sample }
+    microwave { [true, false].sample }
+    security_camera { [true, false].sample }
+    room_number { Faker::Number.unique.number(digits: 2) }
     other { 'MyString' }
   end
 end

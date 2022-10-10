@@ -8,8 +8,7 @@ RSpec.describe 'dashboard/apartments/new', type: :view do
                          address: 'MyString',
                          phone: 'MyString',
                          latitude: 1.5,
-                         longitude: 1.5,
-                         rooms: 1
+                         longitude: 1.5
                        ))
   end
 
@@ -25,7 +24,6 @@ RSpec.describe 'dashboard/apartments/new', type: :view do
 
       assert_select 'input[name=?]', 'apartment[longitude]'
 
-      assert_select 'input[name=?]', 'apartment[rooms]'
     end
   end
 end

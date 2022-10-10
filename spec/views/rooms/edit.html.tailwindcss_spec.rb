@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'rooms/edit', type: :view do
   before do
+    apartment = create(:apartment)
     @room = assign(:room, Room.create!(
                             bed_capacity: 1,
                             breakfast: false,
@@ -21,6 +22,7 @@ RSpec.describe 'rooms/edit', type: :view do
                             microwave: false,
                             security_camera: false,
                             room_number: 1,
+                            apartment_id: apartment.id,
                             other: 'MyString'
                           ))
   end

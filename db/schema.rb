@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_10_202906) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_10_205610) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,7 +19,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_10_202906) do
     t.string "phone"
     t.float "latitude"
     t.float "longitude"
-    t.integer "rooms", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
@@ -55,6 +54,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_10_202906) do
     t.string "other"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "apartment_id", null: false
+    t.index ["apartment_id"], name: "index_rooms_on_apartment_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -74,4 +75,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_10_202906) do
   end
 
   add_foreign_key "apartments", "users"
+  add_foreign_key "rooms", "apartments"
 end

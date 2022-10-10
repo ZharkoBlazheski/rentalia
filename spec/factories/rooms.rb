@@ -2,6 +2,7 @@
 
 FactoryBot.define do
   factory :room do
+    association :apartment
     bed_capacity { rand(1..4) }
     breakfast { [true, false].sample }
     parking { [true, false].sample }

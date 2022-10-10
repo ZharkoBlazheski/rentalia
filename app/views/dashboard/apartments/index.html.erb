@@ -11,14 +11,14 @@
   <div id="apartments" class="min-w-full">
     <% @apartments.each do |apartment| %>
     <div class="grid grid-cols-4 gap-4 border-2 border-solid border-black mb-4">
-      <div class="bg-blue-200"><strong class="block font-medium mb-1">Address:</strong></div>
+      <div><span><strong class="inline-block font-medium mb-1">Address:</strong></span><span> <%= apartment.city %></span></div>
       <div><strong class="block font-medium mb-1">Phone:</strong></div>
       <div><strong class="block font-medium mb-1">Rooms:</strong></div>
-      <div><strong class="block font-medium mb-1">Link:</strong></div>
-      <div><%= link_to apartment.address, dashboard_apartment_path(apartment) %></div>
+      <div><strong class="block font-medium mb-1"> </strong></div>
+      <div><%= apartment.address %></div>
       <div><%= apartment.phone %></div>
       <div><%= apartment.rooms %></div>
-      <div><%= link_to "GO", dashboard_apartment_path(apartment) %></div>
+      <div><%= link_to "More Info", dashboard_apartment_path(apartment), class: "btn btn-success w-30 mb-1" %></div>
     </div>
     <% end %>
   </div>

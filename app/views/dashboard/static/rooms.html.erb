@@ -5,13 +5,14 @@
 
   <div class="flex justify-between items-center">
     <h1 class="font-bold text-4xl">Rooms</h1>
-    <%= link_to 'New room', new_dashboard_apartment_room_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <%#= link_to 'New room', new_dashboard_room_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
     <% @rooms.each do |room| %>
       <div>
-        <%= link_to "Room #{room.room_number}", dashboard_apartment_rooms_path(room) %>
+        <%= link_to "Room No. #{room.room_number}", dashboard_apartment_room_path(room.apartment_id, room.id) %>
       </div>
+      <br>
     <% end %>
 
 

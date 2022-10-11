@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'dashboard/apartments/show', type: :view do
   before do
+    @rooms = [create(:room)]
     @apartment = assign(:apartment, Apartment.create!(
                                       address: 'Address',
                                       phone: 'Phone',

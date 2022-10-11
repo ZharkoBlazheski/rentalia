@@ -10,7 +10,9 @@ module Dashboard
     end
 
     # GET /apartments/1 or /apartments/1.json
-    def show; end
+    def show
+      @rooms = @apartment.rooms
+    end
 
     # GET /apartments/new
     def new

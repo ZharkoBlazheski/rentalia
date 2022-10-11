@@ -18,7 +18,7 @@ FactoryBot.define do
     refrigirator { [true, false].sample }
     microwave { [true, false].sample }
     security_camera { [true, false].sample }
-    room_number { Faker::Number.unique.number(digits: 2) }
+    room_number { Faker::Number.unique.number(digits: 3) }
     other { 'MyString' }
   end
 end

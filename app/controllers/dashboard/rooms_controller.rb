@@ -23,10 +23,10 @@ module Dashboard
     # POST /rooms or /rooms.json
     def create
       @room = Room.new(room_params)
-
+      @room.apartment_id = params[:apartment_id]
       respond_to do |format|
         if @room.save
-          format.html { redirect_to dashboard_rooms_path, notice: 'Room was successfully created.' }
+          format.html { redirect_to dashboard_apartments_path, notice: 'Room was successfully created.' }
           format.json { render :show, status: :created, location: @room }
         else
           format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ module Dashboard
     def update
       respond_to do |format|
         if @room.update(room_params)
-          format.html { redirect_to dashboard_rooms_path, notice: 'Room was successfully updated.' }
+          format.html { redirect_to dashboard_apartments_path, notice: 'Room was successfully updated.' }
           format.json { render :show, status: :ok, location: @room }
         else
           format.html { render :edit, status: :unprocessable_entity }

@@ -9,7 +9,6 @@ RSpec.describe 'apartments/show', type: :view do
                                       phone: 'Phone',
                                       latitude: 2.5,
                                       longitude: 3.5,
-                                      rooms: 4,
                                       user_id: create(:user).id
                                     ))
   end
@@ -20,6 +19,5 @@ RSpec.describe 'apartments/show', type: :view do
     expect(rendered).to match(/Phone/)
     expect(rendered).to match(/2.5/)
     expect(rendered).to match(/3.5/)
-    expect(rendered).to match(/4/)
   end
 end

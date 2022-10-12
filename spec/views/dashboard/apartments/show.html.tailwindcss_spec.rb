@@ -4,12 +4,12 @@ require 'rails_helper'
 
 RSpec.describe 'dashboard/apartments/show', type: :view do
   before do
+    @rooms = [create(:room)]
     @apartment = assign(:apartment, Apartment.create!(
                                       address: 'Address',
                                       phone: 'Phone',
                                       latitude: 2.5,
                                       longitude: 3.5,
-                                      rooms: 4,
                                       user_id: create(:user).id
                                     ))
   end
@@ -20,6 +20,5 @@ RSpec.describe 'dashboard/apartments/show', type: :view do
     expect(rendered).to match(/Phone/)
     expect(rendered).to match(/2.5/)
     expect(rendered).to match(/3.5/)
-    expect(rendered).to match(/4/)
   end
 end

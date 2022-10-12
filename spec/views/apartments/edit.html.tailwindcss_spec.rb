@@ -9,7 +9,6 @@ RSpec.describe 'apartments/edit', type: :view do
                                       phone: 'MyString',
                                       latitude: 1.5,
                                       longitude: 1.5,
-                                      rooms: 1,
                                       user_id: create(:user).id
                                     ))
   end
@@ -25,8 +24,6 @@ RSpec.describe 'apartments/edit', type: :view do
       assert_select 'input[name=?]', 'apartment[latitude]'
 
       assert_select 'input[name=?]', 'apartment[longitude]'
-
-      assert_select 'input[name=?]', 'apartment[rooms]'
     end
   end
 end

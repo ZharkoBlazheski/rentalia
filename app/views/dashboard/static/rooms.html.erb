@@ -1,0 +1,18 @@
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl mb-8">All Rooms (<%= @rooms.size %>)</h1>
+  </div>
+
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
+  <% @rooms.each do |room| %>
+    <%= render 'dashboard/apartments/room', room: room %>
+  <% end %>
+</div>
+
+
+</div>

@@ -4,13 +4,21 @@ include FactoryBot::Syntax::Methods
 puts "Seeding started..."
 
 puts "Creating users..."
-create(:user, first_name: "John", last_name: "Smith", email: "user@test.com")
+default_user = create(:user, first_name: "John", last_name: "Smith", email: "user@test.com")
+4.times do
+    apartment = create(:apartment, user: default_user)
+    rand(1..4).times do
+        create(:room, apartment: apartment)
+    end
+end
 
-puts "Creating apartments..."
+puts "Creating apartments and rooms..."
 10.times do
-    user = create(:user)
-    3.times do
-        create(:apartment, user_id: user.id)
+    rand(1..4).times do
+        apartment = create(:apartment)
+        rand(1..4).times do
+            create(:room, apartment: apartment)
+        end
     end
 end
 

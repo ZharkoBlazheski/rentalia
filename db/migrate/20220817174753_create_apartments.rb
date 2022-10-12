@@ -5,7 +5,6 @@ class CreateApartments < ActiveRecord::Migration[7.0]
       t.string :phone
       t.float :latitude
       t.float :longitude
-      t.integer :rooms, default: 1
 
       t.timestamps
     end

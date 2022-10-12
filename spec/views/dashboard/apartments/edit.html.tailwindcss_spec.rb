@@ -9,7 +9,6 @@ RSpec.describe 'dashboard/apartments/edit', type: :view do
                                       phone: 'MyString',
                                       latitude: 1.5,
                                       longitude: 1.5,
-                                      rooms: 1,
                                       user_id: create(:user).id
                                     ))
   end
@@ -17,7 +16,7 @@ RSpec.describe 'dashboard/apartments/edit', type: :view do
   it 'renders the edit apartment form' do
     render
 
-    assert_select 'form[action=?][method=?]', apartment_path(@apartment), 'post' do
+    assert_select 'form[action=?][method=?]', dashboard_apartment_path(@apartment), 'post' do
       assert_select 'input[name=?]', 'apartment[address]'
 
       assert_select 'input[name=?]', 'apartment[phone]'
@@ -25,8 +24,6 @@ RSpec.describe 'dashboard/apartments/edit', type: :view do
       assert_select 'input[name=?]', 'apartment[latitude]'
 
       assert_select 'input[name=?]', 'apartment[longitude]'
-
-      assert_select 'input[name=?]', 'apartment[rooms]'
     end
   end
 end

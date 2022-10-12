@@ -1,0 +1,92 @@
+<div id="<%= dom_id room %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Bed capacity:</strong>
+    <%= room.bed_capacity %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Breakfast:</strong>
+    <%= humanize_boolean(room.breakfast) %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Parking:</strong>
+    <%= humanize_boolean(room.parking) %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Tv:</strong>
+    <%= humanize_boolean(room.tv) %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Books:</strong>
+    <%= humanize_boolean(room.books) %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Balcony:</strong>
+    <%= humanize_boolean(room.balcony) %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Yard:</strong>
+    <%= room.yard %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Pet friendly:</strong>
+    <%= room.pet_friendly %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Hair dryer:</strong>
+    <%= room.hair_dryer %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Warm water:</strong>
+    <%= room.warm_water %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Smoke alarm:</strong>
+    <%= room.smoke_alarm %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Smoking allowed:</strong>
+    <%= room.smoking_allowed %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Refrigirator:</strong>
+    <%= room.refrigirator %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Microwave:</strong>
+    <%= room.microwave %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Security camera:</strong>
+    <%= room.security_camera %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Room number:</strong>
+    <%= room.room_number %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Other:</strong>
+    <%= room.other %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this room", room, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%#= link_to 'Edit this room', edit_room_path(room), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

@@ -7,4 +7,17 @@ module ApplicationHelper
     error_tag = form_object.errors.full_messages_for(field_name).join('. ')
     content_tag(:p, error_tag, class: 'error-message')
   end
+
+  def humanize_boolean(value)
+    case value
+    when true
+      'Yes'
+    when false
+      'No'
+    when nil
+      'Undefined'
+    else
+      'Invalid'
+    end
+  end
 end

@@ -19,6 +19,10 @@
       <strong class="block font-medium mb-1">Number of Rooms:</strong>
       <%= apartment.rooms.size %>
     </p>
+
+    <p class="my-5">
+      <%= link_to "Add New Room", new_dashboard_apartment_room_path(apartment), class: "rounded-lg py-3 px-5 bg-green-400 inline-block font-medium" %>
+    </p>
   </div>
 
     <% if action_name != "show" %>

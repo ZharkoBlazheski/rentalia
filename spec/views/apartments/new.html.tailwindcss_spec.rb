@@ -23,7 +23,6 @@ RSpec.describe 'apartments/new', type: :view do
       assert_select 'input[name=?]', 'apartment[latitude]'
 
       assert_select 'input[name=?]', 'apartment[longitude]'
-
     end
   end
 end

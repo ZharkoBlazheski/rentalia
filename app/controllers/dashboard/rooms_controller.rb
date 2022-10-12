@@ -41,7 +41,6 @@ module Dashboard
     def update
       room_params.merge(apartment_id: params[:apartment_id])
       respond_to do |format|
-
         if @room.update(room_params)
           format.html { redirect_to dashboard_apartments_path, notice: 'Room was successfully updated.' }
           format.json { render :show, status: :ok, location: @room }

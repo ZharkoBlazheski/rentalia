@@ -2,7 +2,7 @@
 
 module Dashboard
   class RoomsController < Dashboard::DashboardController
-    before_action :set_room, only: %i[show edit update destroy]
+    before_action :set_room, only: %i[edit update destroy]
 
     # GET /rooms or /rooms.json
     def index
@@ -10,7 +10,9 @@ module Dashboard
     end
 
     # GET /rooms/1 or /rooms/1.json
-    def show; end
+    def show
+      @room = current_user.rooms.where(apartment_id: params[:apartment_id], id: params[:id]).first
+    end
 
     # GET /rooms/new
     def new
@@ -37,7 +39,9 @@ module Dashboard
 
     # PATCH/PUT /rooms/1 or /rooms/1.json
     def update
+      room_params.merge(apartment_id: params[:apartment_id])
       respond_to do |format|
+
         if @room.update(room_params)
           format.html { redirect_to dashboard_apartments_path, notice: 'Room was successfully updated.' }
           format.json { render :show, status: :ok, location: @room }
@@ -62,8 +66,7 @@ module Dashboard
 
     # Use callbacks to share common setup or constraints between actions.
     def set_room
-      # @room = Room.find(params[:id])
-      @room = current_user.rooms.where(apartment_id: params[:apartment_id], id: params[:id]).first
+      @room = Room.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

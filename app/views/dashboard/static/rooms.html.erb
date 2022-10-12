@@ -4,16 +4,15 @@
   <% end %>
 
   <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Rooms</h1>
-    <%#= link_to 'New room', new_dashboard_room_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <h1 class="font-bold text-4xl mb-8">All Rooms (<%= @rooms.size %>)</h1>
   </div>
 
-    <% @rooms.each do |room| %>
-      <div>
-        <%= link_to "Room No. #{room.room_number}", dashboard_apartment_room_path(room.apartment_id, room.id) %>
-      </div>
-      <br>
-    <% end %>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
+  <% @rooms.each do |room| %>
+    <%= render 'dashboard/apartments/room', room: room %>
+  <% end %>
+</div>
 
 
 </div>

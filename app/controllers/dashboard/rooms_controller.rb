@@ -6,7 +6,7 @@ module Dashboard
 
     # GET /rooms or /rooms.json
     def index
-      @rooms = Room.all
+      @rooms = current_user.apartments.find(params[:apartment_id]).rooms
     end
 
     # GET /rooms/1 or /rooms/1.json
@@ -62,7 +62,8 @@ module Dashboard
 
     # Use callbacks to share common setup or constraints between actions.
     def set_room
-      @room = Room.find(params[:id])
+      # @room = Room.find(params[:id])
+      @room = current_user.rooms.where(apartment_id: params[:apartment_id], id: params[:id]).first
     end
 
     # Only allow a list of trusted parameters through.

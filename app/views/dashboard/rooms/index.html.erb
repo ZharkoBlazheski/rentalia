@@ -10,7 +10,7 @@
 
     <% @rooms.each do |room| %>
       <div>
-        <%= link_to "Room #{room.room_number}", dashboard_apartment_rooms_path(room) %>
+        <%= link_to "Room #{room.room_number}", dashboard_apartment_room_path(room.apartment_id,room) %>
       </div>
     <% end %>
 

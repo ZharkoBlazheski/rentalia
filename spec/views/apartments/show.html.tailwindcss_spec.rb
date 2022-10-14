@@ -5,6 +5,7 @@ require 'rails_helper'
 RSpec.describe 'apartments/show', type: :view do
   before do
     @apartment = assign(:apartment, Apartment.create!(
+                                      city: 'City',
                                       address: 'Address',
                                       phone: 'Phone',
                                       latitude: 2.5,
@@ -15,6 +16,7 @@ RSpec.describe 'apartments/show', type: :view do
 
   it 'renders attributes in <p>' do
     render
+    expect(rendered).to match(/City/)
     expect(rendered).to match(/Address/)
     expect(rendered).to match(/Phone/)
     expect(rendered).to match(/2.5/)

@@ -7,92 +7,102 @@
     <span class="mx-2"><%= image_tag('room4.jpg', class: "w-32 h-32 rounded") %></span>
   </div>
 
-  <p>Basic Info</p>
+<p>Basic Info</p>
+  <br>
+<div class="flex flex-row">
 
-  <p class="my-5">
+  <p class="my-5 mx-8">
     <strong class="block font-medium mb-1">Room number:</strong>
     <%= room.room_number %>
   </p>
 
-  <p class="my-5">
+  <p class="my-5 mx-8">
     <strong class="block font-medium mb-1">Bed capacity:</strong>
     <%= room.bed_capacity %>
   </p>
 
-  <p class="my-5">
+  <p class="my-5 mx-8">
     <strong class="block font-medium mb-1">Tv:</strong>
     <%= humanize_boolean(room.tv) %>
   </p>
 
-  <p class="my-5">
+  <p class="my-5 mx-8">
     <strong class="block font-medium mb-1">Books:</strong>
     <%= humanize_boolean(room.books) %>
   </p>
+</div>
 
-  <p class="my-5">
+<div class="flex flex-row">
+  <p class="my-5 mx-8">
     <strong class="block font-medium mb-1">Breakfast:</strong>
     <%= humanize_boolean(room.breakfast) %>
   </p>
 
-  <p class="my-5">
+  <p class="my-5 mx-8">
     <strong class="block font-medium mb-1">Parking:</strong>
     <%= humanize_boolean(room.parking) %>
   </p>
 
-  <p class="my-5">
+  <p class="my-5 mx-8">
     <strong class="block font-medium mb-1">Balcony:</strong>
     <%= humanize_boolean(room.balcony) %>
   </p>
 
-  <p class="my-5">
+  <p class="my-5 mx-8">
     <strong class="block font-medium mb-1">Yard:</strong>
     <%= humanize_boolean(room.yard) %>
   </p>
 
-  <p class="my-5">
+  <p class="my-5 mx-8">
     <strong class="block font-medium mb-1">Pet friendly:</strong>
     <%= humanize_boolean(room.pet_friendly) %>
   </p>
+</div>
 
-  <p class="my-5">
+<div class="flex flex-row">
+  <p class="my-5 mx-8">
     <strong class="block font-medium mb-1">Hair dryer:</strong>
     <%= humanize_boolean(room.hair_dryer) %>
   </p>
 
-  <p class="my-5">
+  <p class="my-5 mx-8">
     <strong class="block font-medium mb-1">Warm water:</strong>
     <%= humanize_boolean(room.warm_water) %>
   </p>
 
-  <p class="my-5">
+  <p class="my-5 mx-8">
     <strong class="block font-medium mb-1">Smoke alarm:</strong>
     <%= humanize_boolean(room.smoke_alarm) %>
   </p>
 
-  <p class="my-5">
+  <p class="my-5 mx-8">
     <strong class="block font-medium mb-1">Smoking allowed:</strong>
     <%= humanize_boolean(room.smoking_allowed) %>
   </p>
+</div>
 
-  <p class="my-5">
+<div class="flex flex-row">
+  <p class="my-5 mx-8">
     <strong class="block font-medium mb-1">Refrigirator:</strong>
     <%= humanize_boolean(room.refrigirator) %>
   </p>
 
-  <p class="my-5">
+  <p class="my-5 mx-8">
     <strong class="block font-medium mb-1">Microwave:</strong>
     <%= humanize_boolean(room.microwave) %>
   </p>
 
-  <p class="my-5">
+  <p class="my-5 mx-8">
     <strong class="block font-medium mb-1">Security camera:</strong>
     <%= humanize_boolean(room.security_camera) %>
   </p>
 
-  <p class="my-5">
+  <p class="my-5 mx-8">
     <strong class="block font-medium mb-1">Other:</strong>
     <%= room.other %>
   </p>
+
+</div>
 
   <% if action_name != "show" %>
     <%= link_to "Show this room", dashboard_apartment_room_path(room.apartment_id, room), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
@@ -100,3 +110,4 @@
     <hr class="mt-6">
   <% end %>
 </div>
+

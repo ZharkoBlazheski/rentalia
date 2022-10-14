@@ -5,6 +5,7 @@ require 'rails_helper'
 RSpec.describe 'dashboard/apartments/edit', type: :view do
   before do
     @apartment = assign(:apartment, Apartment.create!(
+                                      city: 'MyString',
                                       address: 'MyString',
                                       phone: 'MyString',
                                       latitude: 1.5,
@@ -17,6 +18,8 @@ RSpec.describe 'dashboard/apartments/edit', type: :view do
     render
 
     assert_select 'form[action=?][method=?]', dashboard_apartment_path(@apartment), 'post' do
+      assert_select 'input[name=?]', 'apartment[city]'
+
       assert_select 'input[name=?]', 'apartment[address]'
 
       assert_select 'input[name=?]', 'apartment[phone]'

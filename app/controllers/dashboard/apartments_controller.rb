@@ -73,7 +73,7 @@ module Dashboard
 
     # Only allow a list of trusted parameters through.
     def apartment_params
-      params.require(:apartment).permit(:address, :phone, :latitude, :longitude, :rooms)
+      params.require(:apartment).permit(:city, :address, :phone, :latitude, :longitude, :rooms)
     end
   end
 end
